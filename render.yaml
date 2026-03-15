@@ -1,0 +1,49 @@
+services:
+  - type: web
+    name: reviseliketeacher-ai-service
+    env: python
+    buildCommand: cd ai-service && pip install --upgrade pip && pip install --upgrade setuptools wheel build && pip install -r requirements.txt
+    startCommand: cd ai-service && python main.py
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production
+      - key: PDF_MAX_TEXT_CHARS
+        value: 180000
+      - key: PDF_MAX_PAGES
+        value: 250
+    healthCheckPath: /health
+
+  - type: web
+    name: reviseliketeacher-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AI_SERVICE_URL
+        value: https://reviseliketeacher-ai-service.onrender.com
+    healthCheckPath: /health
+
+  - type: web
+    name: reviseliketeacher-frontend
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          type: web
+          name: reviseliketeacher-backend
+          property: host
+        value: https://reviseliketeacher-backend.onrender.com/api
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /
+

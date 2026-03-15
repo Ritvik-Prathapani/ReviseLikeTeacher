@@ -1,0 +1,156 @@
+.container {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px 8px 12px 0;
+  min-height: 180px;
+  max-height: 340px;
+}
+
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.bubble {
+  max-width: 85%;
+  align-self: flex-start;
+  padding: 12px 16px;
+  border-radius: 18px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.bubble.user {
+  max-width: 85%;
+  align-self: flex-end;
+  background: rgba(37, 99, 235, 0.25);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.bubble.assistant {
+  max-width: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.content {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.revealContent {
+  display: inline;
+  font: inherit;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.loadingRow {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 6px;
+}
+
+.loadingDots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.loadingDots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.8);
+  animation: chatDotsPulse 1.2s infinite ease-in-out;
+}
+
+.loadingDots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loadingDots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes chatDotsPulse {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+.actionBtn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.actionBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.actionBtnActive {
+  background: rgba(129, 140, 248, 0.28);
+  color: #e5e7eb;
+}
+
+.playBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  border-radius: 8px;
+  color: rgba(209, 213, 219, 0.9);
+  cursor: pointer;
+}
+
+.playBtn:hover {
+  background: rgba(148, 163, 184, 0.25);
+  color: #fff;
+}
+
+.playBtnActive {
+  background: rgba(99, 102, 241, 0.9);
+  border-color: rgba(129, 140, 248, 1);
+  color: #fff;
+}

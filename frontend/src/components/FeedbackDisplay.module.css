@@ -1,0 +1,602 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.scoreBadge {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.scoreBadge.passing {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.scoreBadge.failing {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.voiceFeedback {
+  margin-bottom: 28px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 14px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.voiceHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.voiceIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a5b4fc;
+  flex-shrink: 0;
+}
+
+.voiceLabel {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+  color: #c7d2fe;
+}
+
+.voiceControls {
+  flex-shrink: 0;
+}
+
+.playButton,
+.retryButton {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  background: rgba(99, 102, 241, 0.15);
+  color: #c7d2fe;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.playButton:hover,
+.retryButton:hover {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.teacherText {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  font-style: italic;
+}
+
+.quickCheckBox {
+  margin-top: 18px;
+  padding: 16px 16px 14px;
+  border-radius: 12px;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.85));
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.quickCheckTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.quickCheckTitle {
+  color: rgba(226, 232, 240, 0.9);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.quickCheckSubtitle {
+  color: rgba(226, 232, 240, 0.7);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.quickCheckChat {
+  margin-top: 4px;
+}
+
+.quickCheckVoiceRow {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.langPill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  color: rgba(226, 232, 240, 0.9);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.langPill:hover {
+  background: rgba(30, 64, 175, 0.85);
+  border-color: rgba(59, 130, 246, 0.8);
+  color: #ffffff;
+}
+
+.quickCheckInput {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.quickCheckInput:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.quickCheckActions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quickCheckButton {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  background: rgba(99, 102, 241, 0.2);
+  color: #c7d2fe;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.quickCheckButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quickCheckError {
+  margin-top: 8px;
+  color: #fca5a5;
+  font-size: 13px;
+}
+
+.quickCheckFeedback {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  color: #d1fae5;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.quickCheckHint {
+  margin-top: 8px;
+  color: #dbeafe;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.voiceCoachBox {
+  margin-top: 20px;
+  padding: 18px 16px 14px;
+  border-radius: 12px;
+  background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.12), rgba(15, 23, 42, 0.9));
+  border: 1px solid rgba(129, 140, 248, 0.4);
+}
+
+.voiceCoachTitle {
+  color: rgba(224, 231, 255, 0.95);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.voiceCoachSubtitle {
+  color: rgba(224, 231, 255, 0.75);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.coachChatArea {
+  min-height: 160px;
+  max-height: 280px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding-right: 8px;
+}
+
+.coachChatMessages {
+  padding: 0;
+}
+
+.coachInputRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.voiceCoachDivider {
+  margin: 12px 0 8px;
+  color: #bfdbfe;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.voiceCoachHint {
+  margin-top: 8px;
+  color: #dbeafe;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.voiceCoachResponse {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(2, 132, 199, 0.3);
+}
+
+.voiceCoachReplyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #c7d2fe;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.voiceCoachText {
+  color: #e0f2fe;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.voiceCoachMeta {
+  margin-top: 8px;
+  color: #bfdbfe;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.voiceCoachGrounding {
+  margin-top: 8px;
+  color: #e0f2fe;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.voiceCoachSourceIds {
+  margin-top: 6px;
+  color: #c7d2fe;
+  font-size: 12px;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.voiceCoachClarify {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fde68a;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.voiceCoachRefs {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.voiceCoachRefItem {
+  color: #dbeafe;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 6px 8px;
+  background: rgba(15, 23, 42, 0.25);
+  border-radius: 6px;
+}
+
+.loadingDots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingDots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a5b4fc;
+  animation: dotPulse 1.4s infinite ease-in-out;
+}
+
+.loadingDots span:nth-child(1) { animation-delay: 0s; }
+.loadingDots span:nth-child(2) { animation-delay: 0.2s; }
+.loadingDots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotPulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+.soundWave {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+}
+
+.soundWave span {
+  width: 3px;
+  background: #a5b4fc;
+  border-radius: 2px;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.soundWave span:nth-child(1) { height: 8px; animation-delay: 0s; }
+.soundWave span:nth-child(2) { height: 14px; animation-delay: 0.1s; }
+.soundWave span:nth-child(3) { height: 20px; animation-delay: 0.2s; }
+.soundWave span:nth-child(4) { height: 14px; animation-delay: 0.3s; }
+.soundWave span:nth-child(5) { height: 8px; animation-delay: 0.4s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+.feedbackSection {
+  margin-top: 28px;
+  margin-bottom: 32px;
+  padding: 20px 22px 18px;
+  border-radius: 16px;
+  background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), rgba(15, 23, 42, 0.9));
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.feedbackTitle {
+  color: #e5e7eb;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.feedbackText {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 16px 18px;
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  white-space: pre-wrap;
+}
+
+.feedbackHint {
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(209, 213, 219, 0.85);
+}
+
+.keyPointsSection {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(148, 163, 184, 0.6);
+}
+
+.keyPointsList {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  color: rgba(226, 232, 240, 0.9);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.keyPointItem {
+  margin-bottom: 6px;
+}
+
+.mcqResult {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mcqOptionResult {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  border-radius: 10px;
+}
+
+.mcqCorrectOption {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.mcqWrongOption {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.mcqOptionLabel {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mcqOptionValue {
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.mcqExplanation {
+  margin-top: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nextButton,
+.endButton {
+  padding: 14px 32px;
+  background: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nextButton:hover,
+.endButton:hover {
+  background: #4338ca;
+}
+
+.autoAdvance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.autoAdvanceText {
+  color: #c7d2fe;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.autoAdvanceCancel {
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.autoAdvanceCancel:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+/* Mobile: flatten cards so chat uses most of the screen width */
+@media (max-width: 640px) {
+  .container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card {
+    padding: 16px 8px 20px;
+    border-radius: 10px;
+  }
+
+  .voiceFeedback {
+    padding: 12px 8px;
+    border-radius: 10px;
+  }
+
+  .quickCheckBox,
+  .voiceCoachBox {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
