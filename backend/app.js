@@ -42,8 +42,8 @@ const app = express();
 
 const allowedOrigins = process.env.NODE_ENV === 'production'
   ? [
-      process.env.FRONTEND_URL || 'https://reviseliketeacher-frontend.onrender.com',
-      'https://reviseliketeacher-frontend.onrender.com'
+      process.env.FRONTEND_URL || 'reviseliketeacher-frontend-production.up.railway.app',
+      'reviseliketeacher-frontend-production.up.railway.app'
     ]
   : ['http://localhost:3001', 'http://localhost:5173', 'http://localhost:3000'];
 
